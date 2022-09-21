@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { EditProductsHttpComponent } from './products-http/edit-products-http/edit-products-http.component';
 import { ListProductsHttpComponent } from './products-http/list-products-http/list-products-http.component';
 import { EditProductsComponent } from './products/edit-products/edit-products.component';
 import { ListProductsComponent } from './products/list-products/list-products.component';
@@ -34,7 +35,12 @@ const routes: Routes = [
 
   {
     path: "edit-products-http",
-    component: EditProductsComponent
+    component: EditProductsHttpComponent
+  },
+
+  {
+    path: "edit-products-http/:pid",
+    component: EditProductsHttpComponent
   }
  
 

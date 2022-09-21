@@ -40,7 +40,8 @@ export class ListProductsHttpComponent implements OnInit {
   }
 
   editProduct(id: number){
-
+    
+    this.router.navigate(["edit-products-http",id]);
   }
 
   addProduct(): void{
