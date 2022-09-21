@@ -1,0 +1,135 @@
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-2"></div>
+        <div class="col-8">
+            <button type="button" class="btn btn-success" (click)="toggleProductForm()">Add a New Product</button>
+            <div *ngIf="showAddProductForm">
+                <div class="row">
+                    <div class="col-4"></div>
+                    <div class="col-4"></div>
+                    <div class="col-4"></div>
+                </div>
+                <form #myForm="ngForm"(ngSubmit)="addProduct()">
+                    <div class="card mt-3">
+                        <div class="card-title bg-success text-white">Add a new Product</div>
+                        <div class="card-body">
+
+                            <div class="form-group">
+                                <label for="productID">Product Id</label>
+                                <input type="number" class="form-control" id="productID"
+                                   placeholder="Enter Product ID"
+                                   name="productID"
+                                   [(ngModel)] = "newProduct.productID"
+                                   required>
+                             
+                            </div>
+
+
+                            <div class="form-group">
+                                <label for="ProductName">Product Name</label>
+                                <input type="text" class="form-control" id="ProductName"
+                                   placeholder="Enter Product Name"
+                                   name="productName"
+                                   [(ngModel)] = "newProduct.productName"
+                                   #pTittle = "ngModel"
+                                   (change)="logTittle(pTittle)"
+                                   required>
+                                   <div class="text-danger small" *ngIf="!pTittle.valid && pTittle.touched">
+                                    Product Title is required
+                                   </div>
+                             
+                            </div>
+                            <div class="form-group">
+                                <label for="ProductDescription">Product Description</label>
+                                <input type="text" class="form-control" id="ProductDescription"
+                                    placeholder="The customers will see"
+                                    name="productDescription"
+                                    [(ngModel)] = "newProduct.productDesc"
+                                    #pDesc = "ngModel"
+                                    required>
+                                    <div class="text-danger small" *ngIf="!pDesc.valid && pDesc.touched">
+                                        Product Description is required
+                                       </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="imgurl">Img url</label>
+                                <input type="text" class="form-control" id="imgurl"
+                                    placeholder="For the picture of the product"
+                                    name="productImg"
+                                    [(ngModel)] = "newProduct.productImg"
+                                    #pImg = "ngModel"
+                                    required>
+                                    <div class="text-danger small" *ngIf="!pImg.valid && pImg.touched">
+                                        Image url is required
+                                       </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="cost">cost</label>
+                                <input type="number" class="form-control" id="cost"
+                                    placeholder="How much it is"
+                                    name="productCost"
+                                    [(ngModel)] = "newProduct.productCost"
+                                    required
+                                    #pCost = "ngModel">
+                                    <div class="text-danger small" *ngIf="!pCost.valid && pCost.touched">
+                                        Product Cost is required
+                                       </div>
+                            </div>
+
+                           
+
+                            
+
+                           
+
+                            
+
+                        </div>
+                        <div class="card-footer bg-success">
+                            <button type="submit"
+                                class="btn btn-primary"
+                                [disabled]="!myForm.valid">Submit</button></div>
+                    </div>
+                </form>
+            </div>
+            <h3>LIST OF BOOKS</h3>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>NAME</th>
+                        <th>DESC</th>
+                        <th>COST</th>
+                        <th>IMG</th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let eachProduct of allProducts">
+                        <td>{{ eachProduct.productID }}</td>
+
+                        <td>{{ eachProduct.productName }}</td>
+                        <td>{{ eachProduct.productDesc}}</td>
+                        <td><img [src]="eachProduct.productImg" height="60px" width="100px"></td>
+                        <td>{{ eachProduct.productCost }}</td>
+                        <td>
+                            <button type="button" class="btn btn-primary" (click)="editProduct(eachProduct.productID)">
+                                <span class="material-symbols-outlined">edit</span>
+                            </button>
+                        </td>
+                        <td>
+                            <button type="button" class="btn btn-danger" (click)="deleteProduct(eachProduct.productID)">
+                                <span class="material-symbols-outlined">delete</span>
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-2"></div>
+    </div>
+
+</div>

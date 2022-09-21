@@ -1,0 +1,43 @@
+<div class="container">
+    <div class="row">
+        <div class="col-2"></div>
+        <div class="col-8">
+            <h3>LIST OF BOOKS</h3>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>NAME</th>
+                        <th>DESC</th>
+                        <th>COST</th>
+                        <th>IMG</th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let eachProduct of allProducts">
+                        <td>{{ eachProduct.productID }}</td>
+                        
+                        <td>{{ eachProduct.productName }}</td>
+                        <td>{{ eachProduct.description }}</td>
+                        <td><img [src]="eachProduct.productImg" height="60px" width="100px" ></td>
+                        <td>{{ eachProduct.product_cost }}</td>
+                        <td>
+                            <button type="button" class="btn btn-primary" (click)="editProduct(eachProduct.productID)">
+                                <span class="material-symbols-outlined">edit</span>
+                            </button>
+                        </td>
+                        <td>
+                            <button type="button" class="btn btn-danger" (click)="deleteProduct(eachProduct.productID)">
+                                <span class="material-symbols-outlined">delete</span>
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-2"></div>
+    </div>
+
+</div>

@@ -1,0 +1,66 @@
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-2"></div>
+        <div class="col-8">
+
+
+
+            <form #myForm = "ngForm"(ngSubmit)="updateProduct()">
+                <div class="card mt-3">
+                    <div class="card-title bg-success text-white">Update product</div>
+                    <div class="card-body">
+
+                        <div class="form-group">
+                            <label for="productID">Product Id</label>
+                            <input type="number" class="form-control" id="productID" placeholder="Enter Product ID"
+                                name="productID" [(ngModel)]="updatedProduct.productID">
+
+                        </div>
+
+
+                        <div class="form-group">
+                            <label for="ProductName">Product Name</label>
+                            <input type="text" class="form-control" id="ProductName" placeholder="Enter Product Name"
+                                name="productName" [(ngModel)]="updatedProduct.productName"
+                                #pName = "ngModel"
+                                required>
+                                <div class="text-danger small" *ngIf="!pName.valid && pName.touched">
+                                    Product Name is required
+                                   </div>
+
+                        </div>
+                        <div class="form-group">
+                            <label for="ProductDescription">Product Description</label>
+                            <input type="text" class="form-control" id="ProductDescription"
+                                placeholder="The customers will see" name="productDescription"
+                                [(ngModel)]="updatedProduct.productDesc">>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="imgurl">Img url</label>
+                            <input type="text" class="form-control" id="imgurl"
+                                placeholder="For the picture of the product" name="productImg"
+                                [(ngModel)]="updatedProduct.productImg">>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="cost">cost</label>
+                            <input type="number" class="form-control" id="cost" placeholder="How much it is"
+                                name="productCost" [(ngModel)]="updatedProduct.productCost"
+                                #pCost = "ngModel"
+                                required>
+                                <div class="text-danger small" *ngIf="!pCost.valid && pCost.touched">
+                                    Product Cost is required
+                                   </div>
+                        </div>
+                    </div>
+                    <div class="card-footer bg-success"><button type="submit" class="btn btn-primary"
+                        [disabled]="!myForm.valid">Submit</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="col-2"></div>
+    </div>
+
+</div>
