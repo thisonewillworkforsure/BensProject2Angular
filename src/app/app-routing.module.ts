@@ -6,6 +6,7 @@ import { EditProductsComponent } from './products/edit-products/edit-products.co
 import { ListProductsComponent } from './products/list-products/list-products.component';
 
 import { TestComponent } from './test/test.component';
+import { ListUsersComponent } from './users/list-users/list-users.component';
 
 const routes: Routes = [
   {
@@ -41,9 +42,12 @@ const routes: Routes = [
   {
     path: "edit-products-http/:pid",
     component: EditProductsHttpComponent
-  }
+  },
  
-
+  {
+    path: "list-users",
+    component: ListUsersComponent
+  },
   
 ];
 

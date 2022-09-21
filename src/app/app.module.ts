@@ -11,6 +11,7 @@ import { EditProductsComponent } from './products/edit-products/edit-products.co
 import { HttpClientModule } from '@angular/common/http';
 import { ListProductsHttpComponent } from './products-http/list-products-http/list-products-http.component';
 import { EditProductsHttpComponent } from './products-http/edit-products-http/edit-products-http.component';
+import { ListUsersComponent } from './users/list-users/list-users.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,6 +21,7 @@ import { EditProductsHttpComponent } from './products-http/edit-products-http/ed
     EditProductsComponent,
     ListProductsHttpComponent,
     EditProductsHttpComponent,
+    ListUsersComponent,
 
     
 

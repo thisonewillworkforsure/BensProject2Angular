@@ -1,0 +1,25 @@
+<div class="container">
+
+    <table class="table table-striped">
+
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>UserName</th>
+                <th>Password</th>
+                <th>type</th>
+                <th>status</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr *ngFor="let eachUser of allUsers">
+                <td>{{eachUser.userID}}</td>
+                <td>{{eachUser.userName}}</td>
+                <td>{{eachUser.userPassword}}</td>
+                <td>{{eachUser.typeID}}</td>
+                <td>{{eachUser.statusID}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
