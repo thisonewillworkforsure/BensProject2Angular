@@ -10,7 +10,7 @@ import { FormsModule } from '@angular/forms';
 import { EditProductsComponent } from './products/edit-products/edit-products.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ListProductsHttpComponent } from './products-http/list-products-http/list-products-http.component';
-import { EditProductsHttpComponent } from './products/edit-products-http/edit-products-http.component';
+import { EditProductsHttpComponent } from './products-http/edit-products-http/edit-products-http.component';
 @NgModule({
   declarations: [
     AppComponent,

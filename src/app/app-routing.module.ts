@@ -30,7 +30,13 @@ const routes: Routes = [
   {
     path: "list-products-http",
     component: ListProductsHttpComponent
+  },
+
+  {
+    path: "edit-products-http",
+    component: EditProductsComponent
   }
+ 
 
   
 ];
