@@ -14,6 +14,7 @@ import { EditProductsHttpComponent } from './products-http/edit-products-http/ed
 import { ListUsersComponent } from './users/list-users/list-users.component';
 import { LoginUserComponent } from './users/login-user/login-user.component';
 import { LogoutUserComponent } from './users/logout-user/logout-user.component';
+import { GetProfileComponent } from './profiles/get-profile/get-profile.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,6 +27,7 @@ import { LogoutUserComponent } from './users/logout-user/logout-user.component';
     ListUsersComponent,
     LoginUserComponent,
     LogoutUserComponent,
+    GetProfileComponent,
 
     
 

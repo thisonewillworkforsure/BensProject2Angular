@@ -4,6 +4,7 @@ import { EditProductsHttpComponent } from './products-http/edit-products-http/ed
 import { ListProductsHttpComponent } from './products-http/list-products-http/list-products-http.component';
 import { EditProductsComponent } from './products/edit-products/edit-products.component';
 import { ListProductsComponent } from './products/list-products/list-products.component';
+import { GetProfileComponent } from './profiles/get-profile/get-profile.component';
 
 import { TestComponent } from './test/test.component';
 import { ListUsersComponent } from './users/list-users/list-users.component';
@@ -61,6 +62,11 @@ const routes: Routes = [
   {
     path: "logout-user",
     component: LogoutUserComponent
+  },
+
+  {
+    path: "get-profile/:pid",
+    component: GetProfileComponent
   }
   
 ];
