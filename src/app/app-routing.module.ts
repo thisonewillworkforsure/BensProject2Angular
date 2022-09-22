@@ -4,6 +4,7 @@ import { EditProductsHttpComponent } from './products-http/edit-products-http/ed
 import { ListProductsHttpComponent } from './products-http/list-products-http/list-products-http.component';
 import { EditProductsComponent } from './products/edit-products/edit-products.component';
 import { ListProductsComponent } from './products/list-products/list-products.component';
+import { EditProfileComponent } from './profiles/edit-profile/edit-profile.component';
 import { GetProfileComponent } from './profiles/get-profile/get-profile.component';
 
 import { TestComponent } from './test/test.component';
@@ -67,6 +68,11 @@ const routes: Routes = [
   {
     path: "get-profile/:pid",
     component: GetProfileComponent
+  },
+
+  {
+    path: "edit-profile/:pid",
+    component: EditProfileComponent
   }
   
 ];

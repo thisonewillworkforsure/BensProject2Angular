@@ -15,6 +15,7 @@ import { ListUsersComponent } from './users/list-users/list-users.component';
 import { LoginUserComponent } from './users/login-user/login-user.component';
 import { LogoutUserComponent } from './users/logout-user/logout-user.component';
 import { GetProfileComponent } from './profiles/get-profile/get-profile.component';
+import { EditProfileComponent } from './profiles/edit-profile/edit-profile.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,6 +29,7 @@ import { GetProfileComponent } from './profiles/get-profile/get-profile.componen
     LoginUserComponent,
     LogoutUserComponent,
     GetProfileComponent,
+    EditProfileComponent,
 
     
 

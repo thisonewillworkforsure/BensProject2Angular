@@ -36,4 +36,8 @@ export class GetProfileComponent implements OnInit {
     })
   }
 
+  editProfile(id:number): void{
+    this.router.navigate(["edit-profile",id]);
+  }
+
 }
