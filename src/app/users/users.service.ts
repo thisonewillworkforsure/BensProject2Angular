@@ -12,6 +12,14 @@ export class UsersService {
 
   constructor(private httpClient: HttpClient) { }
 
+ /* validate(user: UserModel): UserModel{
+      this.getOneUser(user.userName, user.userPassword).subscribe((Response)=>{
+        if(Response.userID != 0)
+        return Response;
+      })  
+
+  }*/
+
   getAllUsers(): Observable<UserModel[]>{
     return this.httpClient.get<UserModel[]>(this.baseUrl);
   }

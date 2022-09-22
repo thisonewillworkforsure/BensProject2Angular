@@ -7,6 +7,7 @@ import { ListProductsComponent } from './products/list-products/list-products.co
 
 import { TestComponent } from './test/test.component';
 import { ListUsersComponent } from './users/list-users/list-users.component';
+import { LoginUserComponent } from './users/login-user/login-user.component';
 
 const routes: Routes = [
   {
@@ -48,6 +49,11 @@ const routes: Routes = [
     path: "list-users",
     component: ListUsersComponent
   },
+
+  {
+    path: "login-user",
+    component: LoginUserComponent
+  }
   
 ];
 
