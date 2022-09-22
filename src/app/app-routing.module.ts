@@ -9,6 +9,7 @@ import { TestComponent } from './test/test.component';
 import { ListUsersComponent } from './users/list-users/list-users.component';
 import { LoginUserComponent } from './users/login-user/login-user.component';
 import { LoginGuard } from './users/login.guard';
+import { LogoutUserComponent } from './users/logout-user/logout-user.component';
 
 const routes: Routes = [
   {
@@ -55,6 +56,11 @@ const routes: Routes = [
   {
     path: "login-user",
     component: LoginUserComponent
+  },
+
+  {
+    path: "logout-user",
+    component: LogoutUserComponent
   }
   
 ];

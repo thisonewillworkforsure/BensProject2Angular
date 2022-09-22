@@ -11,8 +11,14 @@
           </li>
           <li class="nav-item">
             <!-- <a class="nav-link" href="display">Display Component ||</a> -->
-            <a class="nav-link" routerLink="login-user">Login user Component New ||</a>
+            <a class="nav-link" routerLink="login-user" *ngIf="!retrieverIsUserLoggedIn()">Login user Component New ||</a>
           </li>
+
+          <li class="nav-item">
+            <!-- <a class="nav-link" href="display">Display Component ||</a> -->
+            <a class="nav-link" routerLink="logout-user" *ngIf="retrieverIsUserLoggedIn()">Log out ||</a>
+          </li>
+
           <li class="nav-item">
             <!-- <a class="nav-link" href="display">Display Component ||</a> -->
             <a class="nav-link" routerLink="list-products-http" *ngIf="retrieverIsUserLoggedIn()">Product Component After Logging in ||</a>

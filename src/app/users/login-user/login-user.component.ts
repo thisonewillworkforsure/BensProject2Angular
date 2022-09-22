@@ -34,7 +34,7 @@ export class LoginUserComponent implements OnInit {
       if(Response){
         this.errorMessage = "";
         this.authService.isLoggedIn = true;
-        this.router.navigate(["list-products"]);
+        this.router.navigate(["list-products-http"]);
       }
       else{
         this.errorMessage = "Invalid username/password";

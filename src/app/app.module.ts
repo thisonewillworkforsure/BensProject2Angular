@@ -13,6 +13,7 @@ import { ListProductsHttpComponent } from './products-http/list-products-http/li
 import { EditProductsHttpComponent } from './products-http/edit-products-http/edit-products-http.component';
 import { ListUsersComponent } from './users/list-users/list-users.component';
 import { LoginUserComponent } from './users/login-user/login-user.component';
+import { LogoutUserComponent } from './users/logout-user/logout-user.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,6 +25,7 @@ import { LoginUserComponent } from './users/login-user/login-user.component';
     EditProductsHttpComponent,
     ListUsersComponent,
     LoginUserComponent,
+    LogoutUserComponent,
 
     
 
