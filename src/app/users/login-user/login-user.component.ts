@@ -28,10 +28,17 @@ export class LoginUserComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  login(userName : string,userPassword : string){
-    this.userService.getOneUser(userName,userPassword)
+  login(){
+    this.userService.getOneUser(this.user.userName,this.user.userPassword)
     .subscribe((Response)=>{
-      console.log(Response.userName + " " + userPassword);
+      if(Response){
+        this.errorMessage = "";
+        this.authService.isLoggedIn = true;
+        this.router.navigate(["list-products"]);
+      }
+      else{
+        this.errorMessage = "Invalid username/password";
+      }
     });
   }
 }

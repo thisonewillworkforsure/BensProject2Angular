@@ -1,1 +1,37 @@
-<p>login-user works!</p>
+<div class="row">
+    <div class="col-4"></div>
+    <div class="col-4">
+        <form (ngSubmit)="login()">
+            <div class="card mt-3">
+                <div class="card-title bg-success text-white"><h2>LOGIN</h2></div>
+                <div class="card-body">
+                    <div class="mb-3 mt-3">
+                        <div *ngIf="errorMessage" class="text-danger small">{{ errorMessage }}</div>
+                        <label for="userName" class="form-label">User name:</label>
+                        <input 
+                            type="text" 
+                            class="form-control" 
+                            id="userName" 
+                            placeholder="Enter user name"
+                            name="uName"
+                            [(ngModel)]="user.userName">
+                    </div>
+                    <div class="mb-3">
+                        <label for="password" class="form-label">Password:</label>
+                        <input 
+                            type="text" 
+                            class="form-control" 
+                            id="password"
+                            placeholder="Enter password" 
+                            name="uPassword"
+                            [(ngModel)]="user.userPassword">
+                    </div> 
+                </div>
+                <div class="card-footer bg-success">
+                    <button type="submit" class="btn btn-warning">LOGIN</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="col-4"></div>
+</div>
