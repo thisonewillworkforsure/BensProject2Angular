@@ -32,6 +32,8 @@ export class LoginUserComponent implements OnInit {
     this.userService.getOneUser(this.user.userName,this.user.userPassword)
     .subscribe((Response)=>{
       if(Response){
+        console.log("ok logging in");
+        console.log(Response);
         this.errorMessage = "";
         this.authService.isLoggedIn = true;
         this.router.navigate([`get-profile/${Response.userID}`]);
