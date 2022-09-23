@@ -12,6 +12,8 @@ export class ListProductsHttpComponent implements OnInit {
   showAddProductForm: boolean = false;
   allProducts: ProductModel[] = [];
 
+  customerID : number = 0;
+
   newProduct: ProductModel = {
     productID : 0,
     productName: "",
@@ -40,7 +42,6 @@ export class ListProductsHttpComponent implements OnInit {
   }
 
   editProduct(id: number){
-    
     this.router.navigate(["edit-products-http",id]);
   }
 
@@ -57,5 +58,9 @@ export class ListProductsHttpComponent implements OnInit {
 
   logTittle(ptittle: any){
     console.log(ptittle);
+  }
+
+  isCustomerOrGuest() : boolean{
+    return this.customerID == 2 || this.customerID == 3;
   }
 }
