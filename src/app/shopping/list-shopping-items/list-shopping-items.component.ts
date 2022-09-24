@@ -55,7 +55,6 @@ export class ListShoppingItemsComponent implements OnInit {
         return eachCart.quantity;
       }
     }
-    console.log(0);
     return 0;
   }
 
@@ -98,6 +97,24 @@ export class ListShoppingItemsComponent implements OnInit {
       this.shoppingService.createCartItem(cart).subscribe((Response)=>{
         this.loadCart();
       });
+    }
+  }
+
+  decreaseAmountOfItemInCart(productID: number, amount: number): void{
+    let cart: CartModel = this.getShoppingObject(productID);
+    
+    if(cart.shoppingID != -1){//so it is found
+      if(cart.quantity - amount <= 0){ //0 quantity items get deleted
+        this.shoppingService.deleteCartItem(cart.shoppingID).subscribe((Response)=>{
+          this.loadCart();
+        });
+      }
+      else{
+        cart.quantity = cart.quantity - amount;
+        this.shoppingService.updateCartItem(cart).subscribe((Response)=>{
+          this.loadCart();
+        });
+      }
     }
   }
 }
