@@ -47,4 +47,15 @@ export class ListShoppingItemsComponent implements OnInit {
       console.log(this.allProducts);
     })
   }
+
+  getAmountOfProductInCart(productID : number) : number{
+    for(let eachCart of this.allCartItems){
+      if(eachCart.productID == productID){
+        console.log(eachCart.quantity);
+        return eachCart.quantity;
+      }
+    }
+    console.log(0);
+    return 0;
+  }
 }
