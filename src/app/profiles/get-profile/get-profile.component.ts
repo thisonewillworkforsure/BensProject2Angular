@@ -40,8 +40,8 @@ export class GetProfileComponent implements OnInit {
     this.router.navigate(["edit-profile",id]);
   }
 
-  startShopping(): void{
-    this.router.navigate(["list-products-http", {typeID : 1}]);
+  startShoppingPlease(): void{
+    this.router.navigate(["list-shopping-items", {userID : this.profile.userID}]);
   }
 
 }

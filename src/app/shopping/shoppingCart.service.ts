@@ -12,7 +12,7 @@ export class ShoppingService {
   constructor(private httpClient : HttpClient) { }
 
   getAllCartItemsForUser(userID : number) : Observable<CartModel[]>{
-    return this.httpClient.get<CartModel[]>(this.baseUrl);
+    return this.httpClient.get<CartModel[]>(this.baseUrl + "/" + userID);
   }
 
   createCartItem(cartItem : CartModel) : Observable<CartModel>{

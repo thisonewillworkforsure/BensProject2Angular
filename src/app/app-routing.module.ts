@@ -6,6 +6,7 @@ import { EditProductsComponent } from './products/edit-products/edit-products.co
 import { ListProductsComponent } from './products/list-products/list-products.component';
 import { EditProfileComponent } from './profiles/edit-profile/edit-profile.component';
 import { GetProfileComponent } from './profiles/get-profile/get-profile.component';
+import { ListShoppingItemsComponent } from './shopping/list-shopping-items/list-shopping-items.component';
 
 import { TestComponent } from './test/test.component';
 import { ListUsersComponent } from './users/list-users/list-users.component';
@@ -73,6 +74,11 @@ const routes: Routes = [
   {
     path: "edit-profile/:pid",
     component: EditProfileComponent
+  },
+
+  {
+    path: "list-shopping-items",
+    component: ListShoppingItemsComponent
   }
   
 ];
