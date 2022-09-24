@@ -113,8 +113,8 @@
 
                         <td>{{ eachProduct.productName }}</td>
                         <td>{{ eachProduct.productDesc}}</td>
-                        <td><img [src]="eachProduct.productImg" height="60px" width="100px"></td>
                         <td>{{ eachProduct.productCost }}</td>
+                        <td><img [src]="eachProduct.productImg" height="60px" width="100px"></td>
                         <td>
                             <button type="button" class="btn btn-primary" (click)="editProduct(eachProduct.productID)">
                                 <span class="material-symbols-outlined">edit</span>
