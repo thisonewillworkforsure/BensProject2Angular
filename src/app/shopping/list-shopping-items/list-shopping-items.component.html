@@ -8,15 +8,15 @@
                 <h4 class="h4">{{eachProduct.productCost | currency : 'USD'}}</h4>
                 <p class="card-text">{{eachProduct.productDesc}}</p>
                 <div class="container">
-                    <div class="row justify-content-center justify-content-between">
-                        <div class="col-sm col-1 m-1 p-0">
-                            <button type="button" class="btn btn-primary"
+                    <div class="row">
+                        <div class="col-sm col-1 m-1 p-0 text-center">
+                            <button type="button" class="btn btn-danger"
                                 (click)="decreaseAmountOfItemInCart(eachProduct.productID,1)">-</button>
                         </div>
                         <div class="col-sm col-4 m-1 p-0">
                             <p class="text-center">{{getAmountOfProductInCart(eachProduct.productID)}}</p>
                         </div>
-                        <div class="col-sm col-1 m-1 p-0">
+                        <div class="col-sm col-1 m-1 p-0 text-center">
                             <button type="button" class="btn btn-primary"
                                 (click)="increaseAmountOfItemInCart(eachProduct.productID,1)">+</button>
                         </div>
