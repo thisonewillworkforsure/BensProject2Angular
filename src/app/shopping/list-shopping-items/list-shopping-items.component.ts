@@ -150,6 +150,14 @@ export class ListShoppingItemsComponent implements OnInit {
     }
   }
 
+  getTotalCost() : number{
+    let sum : number = 0;
+    for(let eachCart of this.allCartItems){
+      sum += (this.getProductCost(eachCart.productID) * eachCart.quantity);
+    }
+    return sum;
+  }
+
   isCheckingOut() : boolean{
     return this.globalService.isCheckingOut;
   }
