@@ -29,10 +29,11 @@
     </ul>
 
     <ul class="navbar-nav justify-content-end">
-      <li class="nav-item">
+      <li class="nav-item" *ngIf="isShopping()">
         <!-- <a class="nav-link" href="display">Display Component ||</a> -->
-        <a class="nav-link" routerLink="list-users"
-        *ngIf="isShopping()">{{getLengthOfCart()}} ||</a>
+        <button class="btn btn-primary"> <span class="material-symbols-outlined">
+          shopping_cart_checkout
+          </span> {{getLengthOfCart()}} </button>
       </li>
     </ul>
 
