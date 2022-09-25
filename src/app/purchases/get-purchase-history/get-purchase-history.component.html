@@ -1,23 +1,32 @@
 <div class="container">
 
-    <table class="table table-striped" *ngFor="let eachPurchase of allPurchases">
+    <div *ngFor="let eachPurchase of allPurchases">
+        <div class="row h2">
+            <div>Total is {{eachPurchase.totalCost | currency : 'USD'}}</div>
+        </div>
 
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>First Name</th>
-                <th>Last Name</th>
-                <th>About Me</th>
-            </tr>
-        </thead>
+        <div class="row h2">
+            <div>Purchase Date is {{eachPurchase.purchaseDate}}</div>
+        
+        </div>
+        <table class="table table-striped">
 
-        <tbody >
-            <tr *ngFor="let eachProduct of eachPurchase.shoppingCartItemPojos">
-                <td>{{1}}</td>
-                <td>{{"hi"}}</td>
-                <td>{{"hi"}}</td>
-                <td>{{""}}</td>
-            </tr>
-        </tbody>
-    </table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Quanity</th>
+                    <th>Cost Per Item</th>
+
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr *ngFor="let eachItem of eachPurchase.shoppingCartItemPojos">
+                    <td>{{getProductName(eachItem.productID)}}</td>
+                    <td>{{eachItem.quantity}}</td>
+                    <td>{{getProductCost(eachItem.productID)}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 </div>
