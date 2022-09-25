@@ -80,6 +80,33 @@ export class ListShoppingItemsComponent implements OnInit {
     return notFoundModel;
   }
 
+  getProductName(productID : number) : string{
+    let productM : ProductModel = this.getProductObject(productID);
+    return productM.productName;
+  }
+
+  getProductCost(productID : number) : number{
+    let productM : ProductModel = this.getProductObject(productID);
+    return productM.productCost;
+  }
+
+  getProductObject( productID : number) : ProductModel{
+    for (let eachProduct of this.allProducts) {
+      if (eachProduct.productID == productID) {
+        console.log(eachProduct);
+        return eachProduct;
+      }
+    }
+    let notFoundModel: ProductModel = {
+      productID : -1,
+      productName: "",
+      productDesc: "",
+      productImg: "",
+      productCost: -1
+    }
+    return notFoundModel;
+  }
+
   increaseAmountOfItemInCart(productID: number, amount: number): void {
     let cart: CartModel = this.getShoppingObject(productID);
 
