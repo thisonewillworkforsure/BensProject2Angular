@@ -44,4 +44,7 @@ export class GetProfileComponent implements OnInit {
     this.router.navigate(["list-shopping-items", {userID : this.profile.userID}]);
   }
 
+  seePurchaseHistory(): void{
+    this.router.navigate([`get-purchase-history/${this.profile.userID}`]);
+  }
 }

@@ -1,1 +1,23 @@
-<p>get-purchase-history works!</p>
+<div class="container">
+
+    <table class="table table-striped" *ngFor="let eachPurchase of allPurchases">
+
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>About Me</th>
+            </tr>
+        </thead>
+
+        <tbody >
+            <tr *ngFor="let eachProduct of eachPurchase.shoppingCartItemPojos">
+                <td>{{1}}</td>
+                <td>{{"hi"}}</td>
+                <td>{{"hi"}}</td>
+                <td>{{""}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

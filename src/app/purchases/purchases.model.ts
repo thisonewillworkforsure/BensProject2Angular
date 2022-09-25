@@ -6,5 +6,5 @@ export interface PurchaseModel{
     userID: number,
     totalCost: number,
     purchaseDate: string,
-    shoppingCartModels: CartModel[]
+    shoppingCartItemPojos: CartModel[]
 }
