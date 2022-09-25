@@ -17,6 +17,7 @@ import { LogoutUserComponent } from './users/logout-user/logout-user.component';
 import { GetProfileComponent } from './profiles/get-profile/get-profile.component';
 import { EditProfileComponent } from './profiles/edit-profile/edit-profile.component';
 import { ListShoppingItemsComponent } from './shopping/list-shopping-items/list-shopping-items.component';
+import { GetPurchaseHistoryComponent } from './purchases/get-purchase-history/get-purchase-history.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,6 +33,7 @@ import { ListShoppingItemsComponent } from './shopping/list-shopping-items/list-
     GetProfileComponent,
     EditProfileComponent,
     ListShoppingItemsComponent,
+    GetPurchaseHistoryComponent,
 
     
 
