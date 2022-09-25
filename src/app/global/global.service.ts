@@ -9,6 +9,8 @@ export class GlobalService {
 
   isShopping: boolean = false;
 
+  isCheckingOut: boolean = false;
+
   constructor() { }
 
   setCartLength(n : number) : void{
@@ -27,4 +29,11 @@ export class GlobalService {
     return this.isShopping;
   }
   
+  setIsCheckingOut(isCheck : boolean): void{
+    this.isCheckingOut = isCheck;
+  }
+
+  toggleIsCheckingOut() : void{
+    this.isCheckingOut = !this.isCheckingOut;
+  }
 }

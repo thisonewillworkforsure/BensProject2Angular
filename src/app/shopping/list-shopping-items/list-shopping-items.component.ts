@@ -24,6 +24,7 @@ export class ListShoppingItemsComponent implements OnInit {
     private globalService : GlobalService) { }
 
   ngOnInit(): void {
+    this.globalService.setIsCheckingOut(false);
     this.userID = this.activatedRoute.snapshot.paramMap.get("userID");
     this.loadCartAndProducts();
     this.globalService.setIsShopping(true);
@@ -121,4 +122,10 @@ export class ListShoppingItemsComponent implements OnInit {
       }
     }
   }
+
+  isCheckingOut() : boolean{
+    return this.globalService.isCheckingOut;
+  }
+
+ 
 }

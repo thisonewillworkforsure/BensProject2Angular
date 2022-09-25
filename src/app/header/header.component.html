@@ -31,7 +31,7 @@
     <ul class="navbar-nav justify-content-end">
       <li class="nav-item" *ngIf="isShopping()">
         <!-- <a class="nav-link" href="display">Display Component ||</a> -->
-        <button class="btn btn-primary"> <span class="material-symbols-outlined">
+        <button class="btn btn-primary" (click)="toggleCheckOut()"> <span class="material-symbols-outlined">
           shopping_cart_checkout
           </span> {{getLengthOfCart()}} </button>
       </li>

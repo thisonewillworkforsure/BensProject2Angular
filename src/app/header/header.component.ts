@@ -25,4 +25,8 @@ export class HeaderComponent implements OnInit {
   isShopping(): boolean{
     return this.globalService.isCustomerShopping();
   }
+
+  toggleCheckOut() : void{
+    this.globalService.toggleIsCheckingOut();
+  }
 }
