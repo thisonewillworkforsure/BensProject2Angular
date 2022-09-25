@@ -4,6 +4,7 @@ import { ProductModel } from 'src/app/products/products.model';
 import { CartModel } from '../cart.model';
 import { ShoppingService } from '../shoppingCart.service';
 import { ActivatedRoute } from '@angular/router';
+import { GlobalService } from 'src/app/global/global.service';
 @Component({
   selector: 'list-shopping-items',
   templateUrl: './list-shopping-items.component.html',
@@ -19,11 +20,13 @@ export class ListShoppingItemsComponent implements OnInit {
 
   constructor(private shoppingService: ShoppingService,
     private productService: ProductsHttpService,
-    private activatedRoute: ActivatedRoute) { }
+    private activatedRoute: ActivatedRoute,
+    private globalService : GlobalService) { }
 
   ngOnInit(): void {
     this.userID = this.activatedRoute.snapshot.paramMap.get("userID");
     this.loadCartAndProducts();
+    this.globalService.setIsShopping(true);
   }
 
   loadCartAndProducts(): void {
@@ -37,6 +40,7 @@ export class ListShoppingItemsComponent implements OnInit {
       this.allCartItems = Response;
       console.log(this.allCartItems);
       console.log("that was shopping cart items");
+      this.globalService.setCartLength(this.allCartItems.length);
     });
   }
 

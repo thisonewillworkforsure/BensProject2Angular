@@ -1,28 +1,41 @@
 <nav class="navbar navbar-expand-sm bg-secondary navbar-dark">
-    <div class="container-fluid">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <!-- <a class="nav-link" href="display">Display Component ||</a> -->
-          <a class="nav-link" routerLink="list-users">list users ||</a>
-        </li>
-        <li class="nav-item">
-            <!-- <a class="nav-link" href="display">Display Component ||</a> -->
-            <a class="nav-link" routerLink="list-products-http">Product Component New ||</a>
-          </li>
-          <li class="nav-item">
-            <!-- <a class="nav-link" href="display">Display Component ||</a> -->
-            <a class="nav-link" routerLink="login-user" *ngIf="!retrieverIsUserLoggedIn()">Login user Component New ||</a>
-          </li>
+  <div class="container-fluid">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <!-- <a class="nav-link" href="display">Display Component ||</a> -->
+        <a class="nav-link" routerLink="list-users">list users ||</a>
+      </li>
+      <li class="nav-item">
+        <!-- <a class="nav-link" href="display">Display Component ||</a> -->
+        <a class="nav-link" routerLink="list-products-http">Product Component New ||</a>
+      </li>
+      <li class="nav-item">
+        <!-- <a class="nav-link" href="display">Display Component ||</a> -->
+        <a class="nav-link" routerLink="login-user" *ngIf="!retrieverIsUserLoggedIn()">Login user Component New ||</a>
+      </li>
 
-          <li class="nav-item">
-            <!-- <a class="nav-link" href="display">Display Component ||</a> -->
-            <a class="nav-link" routerLink="logout-user" *ngIf="retrieverIsUserLoggedIn()">Log out ||</a>
-          </li>
+      <li class="nav-item">
+        <!-- <a class="nav-link" href="display">Display Component ||</a> -->
+        <a class="nav-link" routerLink="logout-user" *ngIf="retrieverIsUserLoggedIn()">Log out ||</a>
+      </li>
 
-          <li class="nav-item">
-            <!-- <a class="nav-link" href="display">Display Component ||</a> -->
-            <a class="nav-link" routerLink="list-products-http" *ngIf="retrieverIsUserLoggedIn()">Product Component After Logging in ||</a>
-          </li>
-      </ul>
-    </div>
-  </nav>
+      <li class="nav-item">
+        <!-- <a class="nav-link" href="display">Display Component ||</a> -->
+        <a class="nav-link" routerLink="list-products-http" *ngIf="retrieverIsUserLoggedIn()">Product Component After
+          Logging in ||</a>
+      </li>
+
+
+    </ul>
+
+    <ul class="navbar-nav justify-content-end">
+      <li class="nav-item">
+        <!-- <a class="nav-link" href="display">Display Component ||</a> -->
+        <a class="nav-link" routerLink="list-users"
+        *ngIf="isShopping()">{{getLengthOfCart()}} ||</a>
+      </li>
+    </ul>
+
+
+  </div>
+</nav>
