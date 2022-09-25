@@ -5,6 +5,7 @@ import { CartModel } from '../cart.model';
 import { ShoppingService } from '../shoppingCart.service';
 import { ActivatedRoute } from '@angular/router';
 import { GlobalService } from 'src/app/global/global.service';
+import { Router } from '@angular/router';
 @Component({
   selector: 'list-shopping-items',
   templateUrl: './list-shopping-items.component.html',
@@ -21,7 +22,8 @@ export class ListShoppingItemsComponent implements OnInit {
   constructor(private shoppingService: ShoppingService,
     private productService: ProductsHttpService,
     private activatedRoute: ActivatedRoute,
-    private globalService : GlobalService) { }
+    private globalService : GlobalService,
+    private router : Router) { }
 
   ngOnInit(): void {
     this.globalService.setIsCheckingOut(false);
@@ -162,5 +164,11 @@ export class ListShoppingItemsComponent implements OnInit {
     return this.globalService.isCheckingOut;
   }
 
- 
+  createPurchase(): void{
+    this.router.navigate(["create-purchase"]);
+  }
+
+  isCartEmpty(): boolean{
+    return this.allCartItems.length == 0;
+  }
 }

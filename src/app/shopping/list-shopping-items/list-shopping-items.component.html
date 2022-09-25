@@ -66,6 +66,9 @@
             </div>
         </div>
         <div class="h2 text-center">Total is: {{getTotalCost() | currency : 'USD'}}</div>
+        <div class="text-center" *ngIf="!isCartEmpty()">
+            <button class="btn btn-primary text-center" (click)="createPurchase()">Click here to comeplete purchase!!!</button>
+        </div>
     </div>
 
 </div>
