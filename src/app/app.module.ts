@@ -19,6 +19,8 @@ import { EditProfileComponent } from './profiles/edit-profile/edit-profile.compo
 import { ListShoppingItemsComponent } from './shopping/list-shopping-items/list-shopping-items.component';
 import { GetPurchaseHistoryComponent } from './purchases/get-purchase-history/get-purchase-history.component';
 import { CreatePurchaseComponent } from './purchases/create-purchase/create-purchase.component';
+import { WelcomeComponent } from './welcome/welcome/welcome.component';
+import { RegisterUserComponent } from './users/register-user/register-user.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,6 +38,8 @@ import { CreatePurchaseComponent } from './purchases/create-purchase/create-purc
     ListShoppingItemsComponent,
     GetPurchaseHistoryComponent,
     CreatePurchaseComponent,
+    WelcomeComponent,
+    RegisterUserComponent,
 
     
 

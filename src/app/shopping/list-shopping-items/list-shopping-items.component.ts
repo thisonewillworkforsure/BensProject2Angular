@@ -6,6 +6,8 @@ import { ShoppingService } from '../shoppingCart.service';
 import { ActivatedRoute } from '@angular/router';
 import { GlobalService } from 'src/app/global/global.service';
 import { Router } from '@angular/router';
+import { PurchasesService } from 'src/app/purchases/purchases.service';
+import { PurchaseModel } from 'src/app/purchases/purchases.model';
 @Component({
   selector: 'list-shopping-items',
   templateUrl: './list-shopping-items.component.html',
@@ -23,7 +25,8 @@ export class ListShoppingItemsComponent implements OnInit {
     private productService: ProductsHttpService,
     private activatedRoute: ActivatedRoute,
     private globalService : GlobalService,
-    private router : Router) { }
+    private router : Router,
+    private purchaseService: PurchasesService) { }
 
   ngOnInit(): void {
     this.globalService.setIsCheckingOut(false);
@@ -165,10 +168,33 @@ export class ListShoppingItemsComponent implements OnInit {
   }
 
   createPurchase(): void{
-    this.router.navigate(["create-purchase"]);
+    let newPurchase : PurchaseModel = {
+
+      purchaseID : 0,
+      userID: this.userID,
+      totalCost: this.getTotalCost(),
+      purchaseDate: this.getCurrentDate(),
+      shoppingCartItemPojos: this.allCartItems
+    };
+    this.purchaseService.createPurchase(newPurchase).subscribe((Response)=>{
+      this.router.navigate(["create-purchase", {cart:this.allCartItems}]);
+    });
+    
   }
 
   isCartEmpty(): boolean{
     return this.allCartItems.length == 0;
+  }
+
+  getCurrentDate(): string{
+    const today = new Date();
+const yyyy = today.getFullYear();
+let mm : any = today.getMonth() + 1;
+let dd : any = today.getDate();
+
+if (dd < 10) dd = '0' + dd;
+if (mm < 10) mm = '0' + mm;
+
+return mm + '-' + dd + '-' + yyyy;
   }
 }

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../users/auth.service';
 import { GlobalService } from '../global/global.service';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -9,9 +10,11 @@ import { GlobalService } from '../global/global.service';
 export class HeaderComponent implements OnInit {
 
   constructor(private authService : AuthService,
-    private globalService : GlobalService) { }
+    private globalService : GlobalService,
+    private router : Router) { }
 
   ngOnInit(): void {
+   
   }
 
   retrieverIsUserLoggedIn(): boolean{
@@ -28,5 +31,9 @@ export class HeaderComponent implements OnInit {
 
   toggleCheckOut() : void{
     this.globalService.toggleIsCheckingOut();
+  }
+
+  welcome() : void{
+    this.router.navigate(["welcome"]);
   }
 }
