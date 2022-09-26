@@ -21,6 +21,9 @@ import { GetPurchaseHistoryComponent } from './purchases/get-purchase-history/ge
 import { CreatePurchaseComponent } from './purchases/create-purchase/create-purchase.component';
 import { WelcomeComponent } from './welcome/welcome/welcome.component';
 import { RegisterUserComponent } from './users/register-user/register-user.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { Validators,FormControl,FormBuilder } from '@angular/forms';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -49,7 +52,8 @@ import { RegisterUserComponent } from './users/register-user/register-user.compo
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

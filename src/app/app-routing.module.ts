@@ -15,6 +15,8 @@ import { ListUsersComponent } from './users/list-users/list-users.component';
 import { LoginUserComponent } from './users/login-user/login-user.component';
 import { LoginGuard } from './users/login.guard';
 import { LogoutUserComponent } from './users/logout-user/logout-user.component';
+import { RegisterUserComponent } from './users/register-user/register-user.component';
+import { WelcomeComponent } from './welcome/welcome/welcome.component';
 
 const routes: Routes = [
   {
@@ -91,6 +93,16 @@ const routes: Routes = [
   {
     path: "create-purchase",
     component: CreatePurchaseComponent
+  },
+
+  {
+    path: "welcome",
+    component: WelcomeComponent
+  },
+
+  {
+    path: "register-user",
+    component: RegisterUserComponent
   }
   
 ];
