@@ -15,6 +15,7 @@ import { ListUsersComponent } from './users/list-users/list-users.component';
 import { LoginUserComponent } from './users/login-user/login-user.component';
 import { LoginGuard } from './users/login.guard';
 import { LogoutUserComponent } from './users/logout-user/logout-user.component';
+import { RegisterGuestComponent } from './users/register-guest/register-guest.component';
 import { RegisterUserComponent } from './users/register-user/register-user.component';
 import { WelcomeComponent } from './welcome/welcome/welcome.component';
 
@@ -103,6 +104,11 @@ const routes: Routes = [
   {
     path: "register-user",
     component: RegisterUserComponent
+  },
+
+  {
+    path: "register-guest",
+    component: RegisterGuestComponent
   }
   
 ];
