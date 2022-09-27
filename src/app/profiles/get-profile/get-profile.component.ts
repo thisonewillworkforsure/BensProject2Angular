@@ -11,6 +11,9 @@ import { ProfileService } from '../profile.service';
 })
 export class GetProfileComponent implements OnInit {
 
+    showProfile : boolean = false;
+
+
     profile : ProfileModel = {
       profileID: 0,
       userID: 0,
@@ -26,6 +29,7 @@ export class GetProfileComponent implements OnInit {
    private profileService: ProfileService) { }
 
   ngOnInit(): void {
+    this.hide();
     this.loadProfile();
   }
 
@@ -46,5 +50,17 @@ export class GetProfileComponent implements OnInit {
 
   seePurchaseHistory(): void{
     this.router.navigate([`get-purchase-history/${this.profile.userID}`]);
+  }
+
+  show(): void{
+    this.showProfile = true;
+  }
+
+  hide(): void{
+    this.showProfile = false;
+  }
+
+  isProfileNameEmpty() : boolean{
+    return this.profile.firstName == "";
   }
 }

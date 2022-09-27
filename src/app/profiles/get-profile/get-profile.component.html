@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" *ngIf="showProfile">
 
     <table class="table table-striped">
 
@@ -22,6 +22,17 @@
             </tr>
         </tbody>
     </table>
+
+    <button class="btn btn-primary" (click)="editProfile(profile.userID)">Click to change profile</button>
+
+    <button class="btn btn-info" (click)="startShoppingPlease()">Click to start shopping please!!!!</button>
+
+    <button class="btn btn-primary" (click)="seePurchaseHistory()">Click to see your purchases history</button>
+</div>
+
+<div class="container" *ngIf="!showProfile">
+
+    <div class="h1 text-white"> Welcome <span *ngIf="!isProfileNameEmpty()">{{profile.firstName}}</span></div>
 
     <button class="btn btn-primary" (click)="editProfile(profile.userID)">Click to change profile</button>
 
