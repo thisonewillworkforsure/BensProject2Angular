@@ -1,6 +1,6 @@
 <div class="container">
 
-    <div *ngFor="let eachPurchase of allPurchases" class="text-white">
+    <div *ngFor="let eachPurchase of allPurchases" class="text-black mt-5 bg-danger rounded">
         <div class="row h2">
             <div>Total is {{eachPurchase.totalCost | currency : 'USD'}}</div>
         </div>
@@ -20,11 +20,11 @@
                 </tr>
             </thead>
 
-            <tbody class="text-white">
-                <tr class="text-white" *ngFor="let eachItem of eachPurchase.shoppingCartItemPojos">
-                    <td class="text-white">{{getProductName(eachItem.productID)}}</td>
-                    <td class="text-white">{{eachItem.quantity}}</td>
-                    <td class="text-white">{{getProductCost(eachItem.productID)}}</td>
+            <tbody class="text-black">
+                <tr class="text-black" *ngFor="let eachItem of eachPurchase.shoppingCartItemPojos">
+                    <td class="text-black">{{getProductName(eachItem.productID)}}</td>
+                    <td class="text-black">{{eachItem.quantity}}</td>
+                    <td class="text-black">{{getProductCost(eachItem.productID)}}</td>
                 </tr>
             </tbody>
         </table>

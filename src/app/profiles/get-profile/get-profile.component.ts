@@ -4,6 +4,7 @@ import { ProfileModel } from '../profiles.model';
 import { Router } from '@angular/router';
 import { ActivatedRoute } from '@angular/router';
 import { ProfileService } from '../profile.service';
+import { GlobalService } from 'src/app/global/global.service';
 @Component({
   selector: 'get-profile',
   templateUrl: './get-profile.component.html',
@@ -23,18 +24,10 @@ export class GetProfileComponent implements OnInit {
       description: ""
     }
 
-    userModel: UserModel = {
-      userID: 0,
-      typeID: 0,
-      userName: "",
-      userPassword: "",
-      statusID: 0
-    }
-
-
   constructor(private router : Router,
    private activatedRoute : ActivatedRoute,
-   private profileService: ProfileService) { }
+   private profileService: ProfileService,
+   private globalService : GlobalService) { }
 
   ngOnInit(): void {
     this.hideProfile();
@@ -43,21 +36,11 @@ export class GetProfileComponent implements OnInit {
 
   loadProfile(): void {
     let id : any = this.activatedRoute.snapshot.paramMap.get("pid");
-    let type : any = this.activatedRoute.snapshot.paramMap.get("typeID");
-    let uName : any = this.activatedRoute.snapshot.paramMap.get("userName");
-    let pWord : any = this.activatedRoute.snapshot.paramMap.get("passWord");
-    let sID : any = this.activatedRoute.snapshot.paramMap.get("statusID");
-
-    this.userModel={
-      userID: id,
-      typeID: type,
-      userName: uName,
-      userPassword: pWord,
-      statusID: sID
-    }
-
+  
     this.profileService.getProfile(id).subscribe((Response)=>{
-      console.log(this.userModel);
+      console.log("AT PROFILE");
+      console.log(this.globalService.currentUser.userName);
+
       this.profile = Response;
     })
   }
@@ -87,7 +70,7 @@ export class GetProfileComponent implements OnInit {
   }
 
   isCustomer(): boolean{
-    return this.userModel.typeID == 2;
+    return this.globalService.isCustomer();
   }
 
   logOut(): void{

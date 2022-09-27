@@ -4,6 +4,7 @@ import { AuthService } from '../auth.service';
 import { UserModel } from '../users.model';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
+import { GlobalService } from 'src/app/global/global.service';
 @Component({
   selector: 'login-user',
   templateUrl: './login-user.component.html',
@@ -23,7 +24,8 @@ export class LoginUserComponent implements OnInit {
 
 
   constructor(private userService : UsersService,
-    private router: Router, private authService:AuthService) { }
+    private router: Router, private authService:AuthService,
+    private globalService: GlobalService) { }
 
   ngOnInit(): void {
   }
@@ -34,8 +36,8 @@ export class LoginUserComponent implements OnInit {
       if(Response){
         this.errorMessage = "";
         this.authService.isLoggedIn = true;
-        this.router.navigate([`get-profile/${Response.userID}`,{typeID:Response.typeID,userName:Response.userName,
-        userPassword:Response.userPassword,statusID:Response.statusID}]);
+        this.globalService.setCurrentUser(Response);
+        this.router.navigate([`get-profile/${Response.userID}`]);
       }
       else{
         this.errorMessage = "Invalid username/password";
