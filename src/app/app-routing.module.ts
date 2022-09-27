@@ -109,6 +109,11 @@ const routes: Routes = [
   {
     path: "register-guest",
     component: RegisterGuestComponent
+  },
+
+  {
+    path: "",
+    component:WelcomeComponent
   }
   
 ];

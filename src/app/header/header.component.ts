@@ -9,12 +9,14 @@ import { Router } from '@angular/router';
 })
 export class HeaderComponent implements OnInit {
 
+
+
   constructor(private authService : AuthService,
     private globalService : GlobalService,
     private router : Router) { }
 
   ngOnInit(): void {
-   
+   document.body.style.backgroundColor = "black";
   }
 
   retrieverIsUserLoggedIn(): boolean{

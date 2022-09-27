@@ -1,6 +1,16 @@
 <nav class="navbar navbar-expand-sm bg-secondary navbar-dark">
   <div class="container-fluid">
     <ul class="navbar-nav">
+      <div class="align-items-start">
+        <li class="nav-item">
+          <!-- <a class="nav-link" href="display">Display Component ||</a> -->
+          <a class="nav-link" routerLink="">
+            <span class="material-symbols-outlined">
+              support
+            </span></a>
+        </li>
+      </div>
+
       <li class="nav-item">
         <!-- <a class="nav-link" href="display">Display Component ||</a> -->
         <a class="nav-link" routerLink="list-users">list users ||</a>
@@ -42,7 +52,7 @@
       <li class="nav-item" *ngIf="isShopping()">
         <!-- <a class="nav-link" href="display">Display Component ||</a> -->
         <button class="btn btn-primary" (click)="toggleCheckOut()"> <span class="material-symbols-outlined">
-          shopping_cart_checkout
+            shopping_cart_checkout
           </span> {{getLengthOfCart()}} </button>
       </li>
     </ul>
