@@ -35,6 +35,10 @@ export class HeaderComponent implements OnInit {
     this.globalService.toggleIsCheckingOut();
   }
 
+  isCheckingOut() : boolean{
+    return this.globalService.isCheckingOut;
+  }
+
   welcome() : void{
     this.router.navigate(["welcome"]);
   }
