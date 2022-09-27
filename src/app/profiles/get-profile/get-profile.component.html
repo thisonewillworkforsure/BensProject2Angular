@@ -34,9 +34,37 @@
 
     <div class="h1 text-white"> Welcome <span *ngIf="!isProfileNameEmpty()">{{profile.firstName}}</span></div>
 
-    <button class="btn btn-primary" (click)="editProfile(profile.userID)">Click to change profile</button>
 
-    <button class="btn btn-info" (click)="startShoppingPlease()">Click to start shopping please!!!!</button>
+    <div class="container ml-1 mr-1">
+        <div class="row justify-content-start">
+            <div class="col-2 d-grid mt-5">
+                <button class="btn btn-danger" (click)="startShoppingPlease()" >Shop!</button>
+            </div>
+        </div>
 
-    <button class="btn btn-primary" (click)="seePurchaseHistory()">Click to see your purchases history</button>
+        <div class="row justify-content-start">
+            <div class="col-2 d-grid mt-5">
+                <button class="btn btn-danger" (click)="displayProfile()" >Look at Profile</button>
+            </div>
+        </div>
+
+        <div class="row justify-content-start">
+            <div class="col-2 d-grid mt-5">
+                <button class="btn btn-danger" (click)="seePurchaseHistory()">See Purchase History</button>
+            </div>
+        </div>
+
+        <div class="row justify-content-start">
+            <div class="col-2 d-grid mt-5">
+                <button class="btn btn-danger" (click)="logOut()">Logout :(</button>
+            </div>
+        </div>
+      
+    </div>
+
+
+
+
+
+   
 </div>
