@@ -6,8 +6,8 @@
 
 
             <form #myForm = "ngForm"(ngSubmit)="updateProfile()">
-                <div class="card mt-3">
-                    <div class="card-title bg-success text-white">Update product</div>
+                <div class="card mt-3 bg-black text-white">
+                    <div class="card-title bg-danger text-white"><h2 class="text-center text-black">EDIT PROFILE</h2></div>
                     <div class="card-body">
 
                         <div class="form-group">
@@ -41,7 +41,7 @@
                             <label for="imgurl">Img url</label>
                             <input type="text" class="form-control" id="imgurl"
                                 placeholder="For the picture of the Profile" name="profileImg"
-                                [(ngModel)]="editProfile.iconImg">>
+                                [(ngModel)]="editProfile.iconImg">
                         </div>
 
                         <div class="form-group">
@@ -55,7 +55,7 @@
                                    </div>
                         </div>
                     </div>
-                    <div class="card-footer bg-success"><button type="submit" class="btn btn-primary"
+                    <div class="card-footer bg-danger"><button type="submit" class="btn btn-primary"
                         [disabled]="!myForm.valid">Submit</button>
                     </div>
                 </div>
