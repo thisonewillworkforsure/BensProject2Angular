@@ -24,6 +24,7 @@ export class ResetPasswordComponent implements OnInit {
 
   isNameUnique : boolean = true;
 
+  private buttonStatus : number = 0;
 
   reactiveForm: FormGroup = new FormGroup({});
   passwordCheck: string = "";
@@ -38,7 +39,7 @@ export class ResetPasswordComponent implements OnInit {
   initializeFormGroup(FB: FormBuilder):void{
     this.reactiveForm = FB.group({
       username: new FormControl('', Validators.compose([
-        Validators.required, Validators.minLength(6),
+        Validators.required, Validators.minLength(2),
       ])),
       password: new FormControl('', Validators.required),
       conpassword: new FormControl('', Validators.required)
@@ -46,6 +47,9 @@ export class ResetPasswordComponent implements OnInit {
       {
         validators: [this.mustMatch('password', 'conpassword'),this.uniqueUserName('username')]
       })
+
+      this.f['password'].setValue("password");
+      this.f['conpassword'].setValue("password");
   }
 
 
@@ -80,16 +84,21 @@ export class ResetPasswordComponent implements OnInit {
         return;
       }
 
+      if(usernamecontrol.value == 'guest'){
+        usernamecontrol.setErrors({uniqueUserName:true});
+        return;
+      }
+
       let found : boolean = false;
       for(let eachUser of this.allUsers){
         if(eachUser.userName == usernamecontrol.value){
           found = true;
-          usernamecontrol.setErrors({ uniqueUserName:true});
+          usernamecontrol.setErrors(null);
           break;
         }
       }
       if(!found){
-        usernamecontrol.setErrors(null);
+        usernamecontrol.setErrors({uniqueUserName:true});
       }
     }
   }
@@ -100,6 +109,8 @@ export class ResetPasswordComponent implements OnInit {
       this.allUsers = Response;
     });
   }
+
+
 
   createUser(): void {
 
@@ -129,5 +140,29 @@ export class ResetPasswordComponent implements OnInit {
     }
    if(!found){this.isNameUnique = true;}
 
+  }
+
+  handleButtonClick() :void{
+    switch(this.buttonStatus){
+
+      case 0: 
+      this.buttonStatus = 1;
+      this.f['password'].addValidators(Validators.required);
+      break;
+      case 1:
+      this.buttonStatus = 2;
+      break;
+      case 2:
+      console.log("eyyyy its password change time");
+      break;
+    }
+  }
+
+  get status(){
+    return this.buttonStatus;
+  }
+
+  adjustConfirmPassword():void{
+    this.f['conpassword'].setValue(this.f['password'].value);
   }
 }
