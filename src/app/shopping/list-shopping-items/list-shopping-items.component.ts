@@ -41,27 +41,21 @@ export class ListShoppingItemsComponent implements OnInit {
   }
 
   loadCart(): void {
-    console.log("in shopping cart!");
     this.shoppingService.getAllCartItemsForUser(this.userID).subscribe((Response) => {
       this.allCartItems = Response;
-      console.log(this.allCartItems);
-      console.log("that was shopping cart items");
       this.globalService.setCartLength(this.allCartItems.length);
     });
   }
 
   loadProducts(): void {
-    console.log("in load products");
     this.productService.getAllProducts().subscribe((Response) => {
       this.allProducts = Response;
-      console.log(this.allProducts);
     })
   }
 
   getAmountOfProductInCart(productID: number): number {
     for (let eachCart of this.allCartItems) {
       if (eachCart.productID == productID) {
-        console.log(eachCart.quantity);
         return eachCart.quantity;
       }
     }
@@ -71,7 +65,6 @@ export class ListShoppingItemsComponent implements OnInit {
   getShoppingObject(productID: number): CartModel {
     for (let eachCart of this.allCartItems) {
       if (eachCart.productID == productID) {
-        console.log(eachCart.quantity);
         return eachCart;
       }
     }
@@ -98,7 +91,6 @@ export class ListShoppingItemsComponent implements OnInit {
   getProductObject( productID : number) : ProductModel{
     for (let eachProduct of this.allProducts) {
       if (eachProduct.productID == productID) {
-        console.log(eachProduct);
         return eachProduct;
       }
     }

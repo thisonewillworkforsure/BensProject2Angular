@@ -62,4 +62,8 @@ export class GlobalService {
   setCurrentUser(userModel : UserModel): void{
     this.currentUser = userModel;
   }
+
+  getUserID() : number{
+    return this.currentUser.userID;
+  }
 }
