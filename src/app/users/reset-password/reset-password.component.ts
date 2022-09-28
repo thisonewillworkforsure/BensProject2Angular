@@ -182,8 +182,12 @@ export class ResetPasswordComponent implements OnInit {
       if(!found) return;
       this.newUser.userPassword = newPassword;
       this.userService.updateUser(this.newUser).subscribe((Response)=>{
-        console.log(Response.userPassword);
+        this.buttonStatus = 3;
       })
     })
+  }
+
+  goToLogIn() : void{
+    this.router.navigate(["login-user"]);
   }
 }
