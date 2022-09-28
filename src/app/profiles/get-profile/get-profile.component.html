@@ -1,103 +1,96 @@
-<div class="container" *ngIf="showProfile">
+<div *ngIf="isCustomer()">
 
-    <div><img [src]="profile.iconImg" alt="picture should be here" width="300px" height="300px"></div>
+    <div class="container" *ngIf="showProfile">
 
-    <div class="h2 text-white">First Name: {{profile.firstName}}</div>
+        <div><img [src]="profile.iconImg" alt="picture should be here" width="300px" height="300px"></div>
 
-    <div class="h2 text-white mt-5">Last Name: {{profile.lastName}}</div>
-    
-    <div class="container">
-        <div class="h3 text-center text-white">About Me</div>
-        <p class="text-white row justify-content-center">
-            {{profile.description}}
-        </p> 
-    </div>
+        <div class="h2 text-white">First Name: {{profile.firstName}}</div>
 
+        <div class="h2 text-white mt-5">Last Name: {{profile.lastName}}</div>
 
-
-
-    <!-- <table class="table table-striped">
-
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>First Name</th>
-                <th>Last Name</th>
-                <th>Img</th>
-                <th>About Me</th>
-            </tr>
-        </thead>
-
-        <tbody>
-            <tr>
-                <td>{{profile.userID}}</td>
-                <td>{{profile.firstName}}</td>
-                <td>{{profile.lastName}}</td>
-                <td><img src=`profile.iconImg` alt="image will be here!"></td>
-                <td>{{profile.description}}</td>
-            </tr>
-        </tbody>
-    </table> -->
-
-    <div class="container ml-1 mr-1">
-        <div class="row justify-content-start">
-            <div class="col-2 d-grid mt-5">
-                <button class="btn btn-danger" (click)="editProfile(profile.userID)" >Edit Profile!</button>
-            </div>
+        <div class="container">
+            <div class="h3 text-center text-white">About Me</div>
+            <p class="text-white row justify-content-center">
+                {{profile.description}}
+            </p>
         </div>
 
-        <div class="row justify-content-start">
-            <div class="col-2 d-grid mt-5">
-                <button class="btn btn-danger" (click)="hideProfile()" >Back to User Menu</button>
+        <div class="container ml-1 mr-1">
+            <div class="row justify-content-start">
+                <div class="col-2 d-grid mt-5">
+                    <button class="btn btn-danger" (click)="editProfile(profile.userID)">Edit Profile!</button>
+                </div>
             </div>
+
+            <div class="row justify-content-start">
+                <div class="col-2 d-grid mt-5">
+                    <button class="btn btn-danger" (click)="hideProfile()">Back to User Menu</button>
+                </div>
+            </div>
+
         </div>
-      
+
     </div>
 
+    <div class="container" *ngIf="!showProfile">
+
+        <div class="h1 text-white"> Welcome <span *ngIf="!isProfileNameEmpty()">{{profile.firstName}}</span></div>
 
 
+        <div class="container ml-1 mr-1">
+            <div class="row justify-content-start">
+                <div class="col-2 d-grid mt-5">
+                    <button class="btn btn-danger" (click)="startShoppingPlease()">Shop!</button>
+                </div>
+            </div>
 
+            <div class="row justify-content-start">
+                <div class="col-2 d-grid mt-5">
+                    <button class="btn btn-danger" (click)="displayProfile()">Look at Profile</button>
+                </div>
+            </div>
 
+            <div class="row justify-content-start">
+                <div class="col-2 d-grid mt-5">
+                    <button class="btn btn-danger" (click)="seePurchaseHistory()">See Purchase History</button>
+                </div>
+            </div>
 
+            <div class="row justify-content-start">
+                <div class="col-2 d-grid mt-5">
+                    <button class="btn btn-danger" (click)="logOut()">Logout :(</button>
+                </div>
+            </div>
 
+        </div>
+
+    </div>
 
 </div>
 
-<div class="container" *ngIf="!showProfile">
-
-    <div class="h1 text-white"> Welcome <span *ngIf="!isProfileNameEmpty()">{{profile.firstName}}</span></div>
 
 
-    <div class="container ml-1 mr-1">
-        <div class="row justify-content-start">
-            <div class="col-2 d-grid mt-5">
-                <button class="btn btn-danger" (click)="startShoppingPlease()" >Shop!</button>
+
+
+
+<div *ngIf="!isCustomer()">
+
+    <div class="container">
+
+        <div class="h1 text-white"> Welcome Back Doctor...</div>
+
+        <div class="h2 text-white mt-5"> What Will you do now to help Umbrella?</div>
+
+        <div class="container ml-1 mr-1">
+            <div class="row justify-content-start">
+                <div class="col-2 d-grid mt-5">
+                    <button class="btn btn-danger" (click)="goToListProductsHttp()">View/Edit Products!</button>
+                </div>
             </div>
+
         </div>
 
-        <div class="row justify-content-start">
-            <div class="col-2 d-grid mt-5">
-                <button class="btn btn-danger" (click)="displayProfile()" >Look at Profile</button>
-            </div>
-        </div>
-
-        <div class="row justify-content-start">
-            <div class="col-2 d-grid mt-5">
-                <button class="btn btn-danger" (click)="seePurchaseHistory()">See Purchase History</button>
-            </div>
-        </div>
-
-        <div class="row justify-content-start">
-            <div class="col-2 d-grid mt-5">
-                <button class="btn btn-danger" (click)="logOut()">Logout :(</button>
-            </div>
-        </div>
-      
     </div>
 
 
-
-
-
-   
 </div>
