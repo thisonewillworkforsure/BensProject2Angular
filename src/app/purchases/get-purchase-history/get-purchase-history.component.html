@@ -1,5 +1,29 @@
 <div class="container">
 
+    <div class="h1 text-white text-center">Purchase History</div>
+
+    <div class="container" *ngIf="isCustomer()">
+        <div class="mt-5">
+            <div class="row justify-content-start">
+                <div class="col-2 d-grid">
+                    <button class="btn btn-danger" (click)="goToProfileMenu()">Back to Profile</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="container" *ngIf="!isCustomer()">
+        <div class="mt-5">
+            <div class="row justify-content-start">
+                <div class="col-2 d-grid">
+                    <button class="btn btn-danger" (click)="goToHomePage()">Back to Home Page</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
     <div *ngFor="let eachPurchase of allPurchases" class="text-black mt-5 bg-danger rounded">
         <div class="row h2">
             <div>Total is {{eachPurchase.totalCost | currency : 'USD'}}</div>
@@ -7,7 +31,7 @@
 
         <div class="row h2">
             <div>Purchase Date is {{eachPurchase.purchaseDate}}</div>
-        
+
         </div>
         <table class="table table-striped text-white">
 

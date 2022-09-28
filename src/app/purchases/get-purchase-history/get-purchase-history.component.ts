@@ -5,6 +5,9 @@ import { ActivatedRoute } from '@angular/router';
 import { ProductModel } from 'src/app/products/products.model';
 import { ProductsHttpService } from 'src/app/products-http/products-http.service';
 import { CartModel } from 'src/app/shopping/cart.model';
+import { Router } from '@angular/router';
+import { GlobalService } from 'src/app/global/global.service';
+
 @Component({
   selector: 'get-purchase-history',
   templateUrl: './get-purchase-history.component.html',
@@ -17,9 +20,13 @@ export class GetPurchaseHistoryComponent implements OnInit {
 
   allProducts: ProductModel[] = []
 
+  TEST : boolean = false;
+
   constructor(private purchaseService: PurchasesService,
     private productService: ProductsHttpService,
-    private activatedRoute: ActivatedRoute) { }
+    private activatedRoute: ActivatedRoute,
+    private router: Router,
+    private globalService: GlobalService) { }
 
   ngOnInit(): void {
 
@@ -79,5 +86,17 @@ export class GetPurchaseHistoryComponent implements OnInit {
     console.log(purchaseModel);
     console.log(purchaseModel.shoppingCartItemPojos.length);
     return purchaseModel.shoppingCartItemPojos;
+  }
+
+  goToProfileMenu():void{
+    this.router.navigate([`get-profile/${this.userId}`]);
+  }
+
+  goToHomePage():void{
+    this.router.navigate(['logout-user']);
+  }
+
+  isCustomer():boolean{
+    return this.globalService.isCustomer();
   }
 }
