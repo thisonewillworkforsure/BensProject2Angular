@@ -44,4 +44,8 @@ export class LoginUserComponent implements OnInit {
       }
     });
   }
+
+  goToResetPassword() :void{
+    this.router.navigate(['reset-password']);
+  }
 }

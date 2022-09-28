@@ -15,6 +15,7 @@
                                     <input class="form-control" type="text" formControlName="username">
                                     <div class="text-danger small" *ngIf="f['username'].getError('required')!=null && f['username'].touched">Enter User Name</div>
                                     <div class="text-danger small" *ngIf="f['username'].getError('minlength')!=null && f['username'].touched">Needs to be at least 6 characters</div>
+                                    <div class="text-danger small" *ngIf="f['username'].getError('uniqueUserName')!=null && f['username'].touched">Name is already used</div>
                                 </div>
                             </div>
 

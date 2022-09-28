@@ -17,6 +17,7 @@ import { LoginGuard } from './users/login.guard';
 import { LogoutUserComponent } from './users/logout-user/logout-user.component';
 import { RegisterGuestComponent } from './users/register-guest/register-guest.component';
 import { RegisterUserComponent } from './users/register-user/register-user.component';
+import { ResetPasswordComponent } from './users/reset-password/reset-password.component';
 import { WelcomeComponent } from './welcome/welcome/welcome.component';
 
 const routes: Routes = [
@@ -114,6 +115,11 @@ const routes: Routes = [
   {
     path: "",
     component:WelcomeComponent
+  },
+
+  {
+    path: "reset-password",
+    component: ResetPasswordComponent
   }
   
 ];
