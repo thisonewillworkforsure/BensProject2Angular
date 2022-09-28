@@ -24,6 +24,7 @@ import { RegisterUserComponent } from './users/register-user/register-user.compo
 import { ReactiveFormsModule } from '@angular/forms';
 import { Validators,FormControl,FormBuilder } from '@angular/forms';
 import { RegisterGuestComponent } from './users/register-guest/register-guest.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -45,6 +46,7 @@ import { RegisterGuestComponent } from './users/register-guest/register-guest.co
     WelcomeComponent,
     RegisterUserComponent,
     RegisterGuestComponent,
+    FooterComponent,
 
     
 

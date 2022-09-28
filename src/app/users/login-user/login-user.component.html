@@ -3,32 +3,32 @@
     <div class="col-4">
         <form (ngSubmit)="login()">
             <div class="card mt-3 bg-black">
-                <div class="card-title bg-danger text-white"><h2 class="text-center text-black">LOGIN</h2></div>
+                <div class="card-title bg-danger text-white">
+                    <h2 class="text-center text-black">LOGIN</h2>
+                </div>
                 <div class="card-body">
                     <div class="mb-3 mt-3">
                         <div *ngIf="errorMessage" class="text-danger small">{{ errorMessage }}</div>
                         <label for="userName" class="form-label text-white">User name:</label>
-                        <input 
-                            type="text" 
-                            class="form-control" 
-                            id="userName" 
-                            placeholder="Enter user name"
-                            name="uName"
+                        <input type="text" class="form-control" id="userName" placeholder="Enter user name" name="uName"
                             [(ngModel)]="user.userName">
                     </div>
                     <div class="mb-3">
                         <label for="password" class="form-label text-white">Password:</label>
-                        <input 
-                            type="password" 
-                            class="form-control" 
-                            id="password"
-                            placeholder="Enter password" 
-                            name="uPassword"
-                            [(ngModel)]="user.userPassword">
-                    </div> 
+                        <input type="password" class="form-control" id="password" placeholder="Enter password"
+                            name="uPassword" [(ngModel)]="user.userPassword">
+                    </div>
                 </div>
-                <div class="card-footer bg-danger">
-                    <button type="submit" class="btn btn-primary">LOGIN</button>
+                <div class="card-footer bg-danger container">
+
+                    <div class="row">
+                        <div class="col-6"><button type="submit" class="btn btn-primary">LOGIN</button></div>
+                        <div class="col-6">
+                            <div class="row justify-content-end p-0 m-0">
+                                <div class="col-10 m-0 p-0 d-grid"> <button class="btn btn-primary">Forgot Password?</button></div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </form>
