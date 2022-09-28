@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { GlobalService } from 'src/app/global/global.service';
 import { Router } from '@angular/router';
 import { Observable, Subscription, timer, interval } from 'rxjs';
+import { ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'create-purchase',
   templateUrl: './create-purchase.component.html',
@@ -13,17 +14,22 @@ export class CreatePurchaseComponent implements OnInit {
 
   interID : any = 0;
 
+  purchaseID: any = 0;
+
   private intervalTimer = interval(1000);
   private leavePageTimer = timer(5000);
   private subscription : Subscription = Subscription.EMPTY;
   private leavePageSubscription : Subscription = Subscription.EMPTY;
   timeUntilPageChanges : number = 0; 
   constructor(private globalService : GlobalService,
-    private router:Router) { 
+    private router:Router,
+    private activatedRoute : ActivatedRoute) { 
 
     }
 
   ngOnInit(): void {
+    this.purchaseID = sessionStorage.getItem("purchaseID");
+    console.log(this.purchaseID);
     this.isCustomer = this.globalService.isCustomer();
     this.globalService.setIsShopping(false);
     this.timeUntilPageChanges = 5000; //milliseconds
@@ -50,5 +56,9 @@ export class CreatePurchaseComponent implements OnInit {
   lowerTimeByOneSecond(){
     this.timeUntilPageChanges -= 1000;
     if(this.timeUntilPageChanges < 0) this.timeUntilPageChanges = 0;
+  }
+
+  getPurchaseID() : number{
+    return this.purchaseID;
   }
 }

@@ -26,11 +26,16 @@
 
     <div *ngFor="let eachPurchase of allPurchases" class="text-black mt-5 bg-danger rounded">
         <div class="row h2">
-            <div>Total is {{eachPurchase.totalCost | currency : 'USD'}}</div>
+            <div>Total is: {{eachPurchase.totalCost | currency : 'USD'}}</div>
         </div>
 
         <div class="row h2">
-            <div>Purchase Date is {{eachPurchase.purchaseDate}}</div>
+            <div>Purchase Date is: {{eachPurchase.purchaseDate}}</div>
+
+        </div>
+
+        <div class="row h2">
+            <div>Confirmation number is: {{eachPurchase.purchaseID}}</div>
 
         </div>
         <table class="table table-striped text-white">
@@ -48,7 +53,7 @@
                 <tr class="text-black" *ngFor="let eachItem of eachPurchase.shoppingCartItemPojos">
                     <td class="text-black">{{getProductName(eachItem.productID)}}</td>
                     <td class="text-black">{{eachItem.quantity}}</td>
-                    <td class="text-black">{{getProductCost(eachItem.productID)}}</td>
+                    <td class="text-black">{{getProductCost(eachItem.productID) | currency : 'USD'}}</td>
                 </tr>
             </tbody>
         </table>

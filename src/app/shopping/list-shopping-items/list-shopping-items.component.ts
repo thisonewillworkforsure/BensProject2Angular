@@ -169,7 +169,9 @@ export class ListShoppingItemsComponent implements OnInit {
       shoppingCartItemPojos: this.allCartItems
     };
     this.purchaseService.createPurchase(newPurchase).subscribe((Response)=>{
-      this.router.navigate(["create-purchase", {cart:this.allCartItems}]);
+      let id : any = Response.purchaseID;
+      sessionStorage.setItem("purchaseID",id);
+      this.router.navigate(["create-purchase", {cart:this.allCartItems,}]);
     });
     
   }

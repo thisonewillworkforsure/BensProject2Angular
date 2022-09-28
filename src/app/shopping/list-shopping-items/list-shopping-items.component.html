@@ -45,7 +45,7 @@
                     <tbody>
                         <tr *ngFor="let eachCart of allCartItems">
                             <td>{{ getProductName(eachCart.productID) }}</td>
-                            <td>{{ getProductCost(eachCart.productID)}}</td>
+                            <td>{{ getProductCost(eachCart.productID) | currency : 'USD'}}</td>
                             <td>
                                 <div class="text-start">
                                     <button type="button" class="btn btn-danger"
@@ -59,7 +59,7 @@
                                         (click)="increaseAmountOfItemInCart(eachCart.productID,1)">+</button>
                                 </div>
                             </td>
-                            <td>{{ getProductCost(eachCart.productID) * eachCart.quantity}}</td>
+                            <td>{{ (getProductCost(eachCart.productID) * eachCart.quantity) | currency : 'USD'}}</td>
                         </tr>
                     </tbody>
                 </table>
