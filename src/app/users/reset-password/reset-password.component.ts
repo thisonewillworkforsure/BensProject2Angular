@@ -20,7 +20,7 @@ export class ResetPasswordComponent implements OnInit {
     statusID: 1
   }
 
-  allUsers: UserModel[] = [this.newUser];
+  allUsers: UserModel[] = [];
 
   isNameUnique : boolean = true;
 
@@ -147,13 +147,12 @@ export class ResetPasswordComponent implements OnInit {
 
       case 0: 
       this.buttonStatus = 1;
-      this.f['password'].addValidators(Validators.required);
       break;
       case 1:
       this.buttonStatus = 2;
       break;
       case 2:
-      console.log("eyyyy its password change time");
+      this.updateUser();
       break;
     }
   }
@@ -164,5 +163,27 @@ export class ResetPasswordComponent implements OnInit {
 
   adjustConfirmPassword():void{
     this.f['conpassword'].setValue(this.f['password'].value);
+  }
+
+  updateUser():void{
+    let userName = this.f['username'].value;
+    let newPassword = this.f['password'].value;
+    this.userService.getAllUsers().subscribe((Response)=>{
+      console.log(Response);
+      this.allUsers = Response;
+      let found : boolean = false;
+      for(let eachUser of this.allUsers){
+        if(userName == eachUser.userName){
+            this.newUser = eachUser;
+            found = true;
+            break;
+        }
+      }
+      if(!found) return;
+      this.newUser.userPassword = newPassword;
+      this.userService.updateUser(this.newUser).subscribe((Response)=>{
+        console.log(Response.userPassword);
+      })
+    })
   }
 }
