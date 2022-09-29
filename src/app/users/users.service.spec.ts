@@ -3,7 +3,7 @@ import { TestBed } from '@angular/core/testing';
 import { UsersService } from './users.service';
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 import { UserModel } from './users.model';
-fdescribe('UsersService', () => {
+describe('UsersService', () => {
   let service: UsersService;
   let httpMock: HttpTestingController
   beforeEach(() => {

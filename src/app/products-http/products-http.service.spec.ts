@@ -17,7 +17,7 @@ describe('ProductsHttpService', () => {
     expect(service).toBeTruthy();
   });
 
-  it('should give a profuct Model', ()=> {
+  it('should access getAllProducts', ()=> {
     let names : ProductModel[] = [];
     service.getAllProducts().subscribe((Response)=>{
       names = Response;
@@ -27,7 +27,7 @@ describe('ProductsHttpService', () => {
     //spyOn(service,"getProfile").and.returnValue(of());
   });
 
-  it('should give a Profile Model', ()=> {
+  it('should access getOneProduct', ()=> {
     let name : ProductModel = {
       productID : 7,
       productName: "",
