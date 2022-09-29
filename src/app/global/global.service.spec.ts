@@ -13,4 +13,12 @@ describe('GlobalService', () => {
   it('should be created', () => {
     expect(service).toBeTruthy();
   });
+
+  it('should have isShopping initially false ', () => {
+    expect(service.isShopping).toBe(false);
+  });
+
+  it('should have isCheckingOut initially false ', () => {
+    expect(service.isCheckingOut).toBe(false);
+  });
 });
