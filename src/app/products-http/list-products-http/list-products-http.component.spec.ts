@@ -3,7 +3,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { ListProductsHttpComponent } from './list-products-http.component';
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 import { ProductsHttpService } from '../products-http.service';
-fdescribe('ListProductsHttpComponent', () => {
+describe('ListProductsHttpComponent', () => {
   let component: ListProductsHttpComponent;
   let fixture: ComponentFixture<ListProductsHttpComponent>;
 
