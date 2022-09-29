@@ -26,7 +26,8 @@ import { Validators,FormControl,FormBuilder } from '@angular/forms';
 import { RegisterGuestComponent } from './users/register-guest/register-guest.component';
 import { FooterComponent } from './footer/footer.component';
 import { ResetPasswordComponent } from './users/reset-password/reset-password.component';
-
+import { HttpClient } from '@angular/common/http';
+import { BrowserDynamicTestingModule } from '@angular/platform-browser-dynamic/testing';
 @NgModule({
   declarations: [
     AppComponent,
@@ -49,6 +50,7 @@ import { ResetPasswordComponent } from './users/reset-password/reset-password.co
     RegisterGuestComponent,
     FooterComponent,
     ResetPasswordComponent,
+    
 
     
 
@@ -59,7 +61,10 @@ import { ResetPasswordComponent } from './users/reset-password/reset-password.co
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule,
+    
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

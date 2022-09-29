@@ -24,7 +24,7 @@ export class ResetPasswordComponent implements OnInit {
 
   isNameUnique : boolean = true;
 
-  private buttonStatus : number = 0;
+  public buttonStatus : number = 0;
 
   reactiveForm: FormGroup = new FormGroup({});
   passwordCheck: string = "";

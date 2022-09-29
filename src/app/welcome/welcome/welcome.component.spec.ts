@@ -20,4 +20,12 @@ describe('WelcomeComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should be a passed test', ()=>{
+    expect(1).toEqual(1);
+  });
+
+  it('should also be a passed test', ()=>{
+    expect(1).toEqual(1);
+  });
 });
