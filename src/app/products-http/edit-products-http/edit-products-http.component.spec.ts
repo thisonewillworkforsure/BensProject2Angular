@@ -5,7 +5,7 @@ import { HttpClientTestingModule, HttpTestingController } from '@angular/common/
 import { ActivatedRoute } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 
-fdescribe('EditProductsHttpComponent', () => {
+describe('EditProductsHttpComponent', () => {
   let component: EditProductsHttpComponent;
   let fixture: ComponentFixture<EditProductsHttpComponent>;
   let httpMock : HttpTestingController
