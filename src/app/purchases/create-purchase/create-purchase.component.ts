@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { GlobalService } from 'src/app/global/global.service';
 import { Router } from '@angular/router';
 import { Observable, Subscription, timer, interval } from 'rxjs';
-import { ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'create-purchase',
   templateUrl: './create-purchase.component.html',
@@ -22,8 +21,7 @@ export class CreatePurchaseComponent implements OnInit {
   private leavePageSubscription : Subscription = Subscription.EMPTY;
   timeUntilPageChanges : number = 0; 
   constructor(private globalService : GlobalService,
-    private router:Router,
-    private activatedRoute : ActivatedRoute) { 
+    private router:Router,) { 
 
     }
 
@@ -57,6 +55,8 @@ export class CreatePurchaseComponent implements OnInit {
     this.timeUntilPageChanges -= 1000;
     if(this.timeUntilPageChanges < 0) this.timeUntilPageChanges = 0;
   }
+
+  get f(){return this.timeUntilPageChanges;}
 
   getPurchaseID() : number{
     return this.purchaseID;
