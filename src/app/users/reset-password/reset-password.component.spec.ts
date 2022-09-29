@@ -5,7 +5,7 @@ import { ResetPasswordComponent } from './reset-password.component';
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 import { FormBuilder } from '@angular/forms';
 
-fdescribe('ResetPasswordComponent', () => {
+describe('ResetPasswordComponent', () => {
   let component: ResetPasswordComponent;
   let fixture: ComponentFixture<ResetPasswordComponent>;
   let fb: FormBuilder;
