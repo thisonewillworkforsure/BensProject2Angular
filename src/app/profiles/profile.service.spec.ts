@@ -1,12 +1,14 @@
 import { TestBed } from '@angular/core/testing';
 
 import { ProfileService } from './profile.service';
-
-describe('ProfileService', () => {
+import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
+fdescribe('ProfileService', () => {
   let service: ProfileService;
 
   beforeEach(() => {
-    TestBed.configureTestingModule({});
+    TestBed.configureTestingModule({
+      imports:[HttpClientTestingModule]
+    });
     service = TestBed.inject(ProfileService);
   });
 

@@ -3,7 +3,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { RegisterUserComponent } from './register-user.component';
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 import { FormBuilder } from '@angular/forms';
-fdescribe('RegisterUserComponent', () => {
+describe('RegisterUserComponent', () => {
   let component: RegisterUserComponent;
   let fixture: ComponentFixture<RegisterUserComponent>;
 
