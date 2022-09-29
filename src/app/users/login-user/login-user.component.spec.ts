@@ -2,7 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { LoginUserComponent } from './login-user.component';
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
-fdescribe('LoginUserComponent', () => {
+describe('LoginUserComponent', () => {
   let component: LoginUserComponent;
   let fixture: ComponentFixture<LoginUserComponent>;
   let httpMock : HttpTestingController
