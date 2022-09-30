@@ -36,6 +36,7 @@ export class LoginUserComponent implements OnInit {
       if(Response){
         this.errorMessage = "";
         this.authService.isLoggedIn = true;
+        this.setUserModelToStorage(Response);
         this.globalService.setCurrentUser(Response);
         this.router.navigate([`get-profile/${Response.userID}`]);
       }
@@ -47,5 +48,16 @@ export class LoginUserComponent implements OnInit {
 
   goToResetPassword() :void{
     this.router.navigate(['reset-password']);
+  }
+
+  setUserModelToStorage(userModel : UserModel): void{
+    let currentUserID : any = userModel.userID
+    sessionStorage.setItem("currentUserID",currentUserID);
+    sessionStorage.setItem("currentUsername",userModel.userName);
+    sessionStorage.setItem("currentPassword",userModel.userPassword);
+    let currentTypeID : any = userModel.typeID
+    sessionStorage.setItem("currentTypeID",currentTypeID);
+    let currentStatusID : any = userModel.statusID
+    sessionStorage.setItem("currentStatusID",currentStatusID);
   }
 }

@@ -29,6 +29,7 @@ export class CreatePurchaseComponent implements OnInit {
     this.purchaseID = sessionStorage.getItem("purchaseID");
     console.log(this.purchaseID);
     this.isCustomer = this.globalService.isCustomer();
+    sessionStorage.setItem("isShopping","false");
     this.globalService.setIsShopping(false);
     this.timeUntilPageChanges = 5000; //milliseconds
     this.subscription = this.intervalTimer.subscribe(()=>this.lowerTimeByOneSecond());

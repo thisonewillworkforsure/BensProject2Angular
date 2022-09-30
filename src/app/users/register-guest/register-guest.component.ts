@@ -27,9 +27,20 @@ export class RegisterGuestComponent implements OnInit {
   ngOnInit(): void {
     this.userService.addUser(this.newGuest).subscribe((Response)=>{
       this.newGuest = Response;
+      this.setUserModelToStorage(Response);
       this.globalService.setCurrentUser(Response);
       this.router.navigate(["list-shopping-items",{userID: this.newGuest.userID}]);
     })
   }
 
+    setUserModelToStorage(userModel : UserModel): void{
+      let currentUserID : any = userModel.userID
+      sessionStorage.setItem("currentUserID",currentUserID);
+      sessionStorage.setItem("currentUsername",userModel.userName);
+      sessionStorage.setItem("currentPassword",userModel.userPassword);
+      let currentTypeID : any = userModel.typeID
+      sessionStorage.setItem("currentTypeID",currentTypeID);
+      let currentStatusID : any = userModel.statusID
+      sessionStorage.setItem("currentStatusID",currentStatusID);
+    }
 }

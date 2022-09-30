@@ -11,22 +11,14 @@
                 </div>
                 <form #myForm="ngForm"(ngSubmit)="addProduct()">
                     <div class="card mt-3">
-                        <div class="card-title bg-success text-white">Add a new Product</div>
+                        <div class="card-title bg-success text-black">Add a new Product</div>
                         <div class="card-body">
 
-                            <div class="form-group">
-                                <label for="productID">Product Id</label>
-                                <input type="number" class="form-control" id="productID"
-                                   placeholder="Enter Product ID"
-                                   name="productID"
-                                   [(ngModel)] = "newProduct.productID"
-                                   required>
-                             
-                            </div>
+                           
 
 
                             <div class="form-group">
-                                <label for="ProductName">Product Name</label>
+                                <label for="ProductName" class="text-black">Product Name</label>
                                 <input type="text" class="form-control" id="ProductName"
                                    placeholder="Enter Product Name"
                                    name="productName"
@@ -40,9 +32,9 @@
                              
                             </div>
                             <div class="form-group">
-                                <label for="ProductDescription">Product Description</label>
+                                <label for="ProductDescription" class="text-black" >Product Description</label>
                                 <input type="text" class="form-control" id="ProductDescription"
-                                    placeholder="The customers will see"
+                                    placeholder="The customers will see this description"
                                     name="productDescription"
                                     [(ngModel)] = "newProduct.productDesc"
                                     #pDesc = "ngModel"
@@ -53,7 +45,7 @@
                             </div>
 
                             <div class="form-group">
-                                <label for="imgurl">Img url</label>
+                                <label for="imgurl" class="text-black" >Img url</label>
                                 <input type="text" class="form-control" id="imgurl"
                                     placeholder="For the picture of the product"
                                     name="productImg"
@@ -66,7 +58,7 @@
                             </div>
 
                             <div class="form-group">
-                                <label for="cost">cost</label>
+                                <label for="cost" class="text-black" >cost</label>
                                 <input type="number" class="form-control" id="cost"
                                     placeholder="How much it is"
                                     name="productCost"
@@ -94,7 +86,7 @@
                     </div>
                 </form>
             </div>
-            <h3>LIST OF BOOKS</h3>
+            <h3>LIST OF PRODUCTS</h3>
             <table class="table table-striped text-white">
                 <thead>
                     <tr>
@@ -113,7 +105,7 @@
 
                         <td class="text-white">{{ eachProduct.productName }}</td>
                         <td class="text-white">{{ eachProduct.productDesc}}</td>
-                        <td class="text-white">{{ eachProduct.productCost }}</td>
+                        <td class="text-white">{{ eachProduct.productCost | currency : 'USD'}}</td>
                         <td><img [src]="eachProduct.productImg" height="60px" width="100px"></td>
                         <td>
                             <button type="button" class="btn btn-primary" (click)="editProduct(eachProduct.productID)">

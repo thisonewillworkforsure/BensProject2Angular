@@ -80,4 +80,8 @@ export class GetProfileComponent implements OnInit {
   logOut(): void{
     this.router.navigate(['logout-user']);
   }
+
+  goToListUsers(): void{
+    this.router.navigate(['list-users']);
+  }
 }

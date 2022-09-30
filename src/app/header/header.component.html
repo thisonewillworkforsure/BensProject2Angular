@@ -13,25 +13,11 @@
 
       <li class="nav-item">
         <!-- <a class="nav-link" href="display">Display Component ||</a> -->
-        <a class="nav-link" routerLink="list-users">list users ||</a>
+        <a class="nav-link" routerLink="">Umbrella Cart</a>
       </li>
       <li class="nav-item">
         <!-- <a class="nav-link" href="display">Display Component ||</a> -->
-        <a class="nav-link" routerLink="register-user">Register ||</a>
-      </li>
-      <li class="nav-item">
-        <!-- <a class="nav-link" href="display">Display Component ||</a> -->
-        <a class="nav-link" routerLink="list-products-http">Product Component New ||</a>
-      </li>
-
-      <li class="nav-item">
-        <!-- <a class="nav-link" href="display">Display Component ||</a> -->
-        <a class="nav-link" routerLink="register-guest">Shop as guest ||</a>
-      </li>
-
-      <li class="nav-item">
-        <!-- <a class="nav-link" href="display">Display Component ||</a> -->
-        <a class="nav-link" routerLink="login-user" *ngIf="!retrieverIsUserLoggedIn()">Login user Component New ||</a>
+        <a class="nav-link" routerLink="login-user" *ngIf="!retrieverIsUserLoggedIn()">Login</a>
       </li>
 
       <li class="nav-item">
@@ -41,10 +27,8 @@
 
       <li class="nav-item">
         <!-- <a class="nav-link" href="display">Display Component ||</a> -->
-        <a class="nav-link" routerLink="list-products-http" *ngIf="retrieverIsUserLoggedIn()">Product Component After
-          Logging in ||</a>
+          <button class="btn text-white" (click)="goToProfile()" *ngIf="retrieverIsUserLoggedIn() && isCustomerOrAdmin()">Go to profile</button>
       </li>
-
 
     </ul>
 

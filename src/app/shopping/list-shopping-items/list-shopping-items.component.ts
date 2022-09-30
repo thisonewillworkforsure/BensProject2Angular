@@ -32,6 +32,7 @@ export class ListShoppingItemsComponent implements OnInit {
     this.globalService.setIsCheckingOut(false);
     this.userID = this.activatedRoute.snapshot.paramMap.get("userID");
     this.loadCartAndProducts();
+    sessionStorage.setItem("isShopping","true");
     this.globalService.setIsShopping(true);
   }
 

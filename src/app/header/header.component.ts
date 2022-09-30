@@ -39,6 +39,19 @@ export class HeaderComponent implements OnInit {
     return this.globalService.isCheckingOut;
   }
 
+  isCustomerOrAdmin(): boolean{
+    return this.globalService.isCustomer() || this.globalService.isAdmin();
+  }
+
+  getGoToProfileString(): string{
+    return "get-profile" + "/" + this.globalService.getUserID();
+
+  }
+
+  goToProfile() : void{
+    this.router.navigate([`get-profile/${this.globalService.getUserID()}`]);
+  }
+
   welcome() : void{
     this.router.navigate(["welcome"]);
   }
